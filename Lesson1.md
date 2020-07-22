@@ -131,10 +131,13 @@ I will paste the output for a decade old machine -
 We must be able to *understand* each of the warnings, [ if you get one ]. 
 
      1 - ***WARNING*** CPU scaling is enabled .... .... ....
+     
  Fix -    [https://github.com/google/benchmark#disabling-cpu-frequency-scaling](https://github.com/google/benchmark#disabling-cpu-frequency-scaling)
+ 
 Read Up  - [(https://www.kernel.org/doc/html/v4.14/admin-guide/pm/cpufreq.html)](https://www.kernel.org/doc/html/v4.14/admin-guide/pm/cpufreq.html)
 
 2 - `***WARNING*** Library was built as DEBUG. Timings may be affected`
+
 Fix -    [https://github.com/google/benchmark#debug-vs-release](https://github.com/google/benchmark#debug-vs-release)
 
 ***Quiz***
