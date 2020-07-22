@@ -138,6 +138,7 @@ Read Up  - [(https://www.kernel.org/doc/html/v4.14/admin-guide/pm/cpufreq.html)]
 Fix -    [https://github.com/google/benchmark#debug-vs-release](https://github.com/google/benchmark#debug-vs-release)
 
 ***Quiz***
+
  - Does fixing the CPU  scaling setting changes the output *?* 
 -	Does changing to release version [ we might need to build ]  changes the output *?*
 -	How will the output change when run the above tests on a virtual machine with same/different specs *?*
@@ -151,6 +152,7 @@ Fix -    [https://github.com/google/benchmark#debug-vs-release](https://github.c
 What do  the `iterations` in the output  mean [ when we ran `./a.out` ] ?
 Explanation - [https://github.com/google/benchmark#runtime-and-reporting-considerations](https://github.com/google/benchmark#runtime-and-reporting-considerations)
 What do the `time` and `CPU` mean in the output?  Try reading about `cpu time` 
+
 ***Quiz***
 
  - *Compile*  the file `b1.cpp` with the flag -O3 and *run* it again. What changes you see in the number of `iterations` and in the `time` in the output?  [ `clang++ b1.cpp -lbenchmark -lpthread  -O3 -std=c++17; ./a.out` 
