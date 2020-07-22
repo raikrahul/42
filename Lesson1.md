@@ -160,5 +160,5 @@ What do the `time` and `CPU` mean in the output?  Try reading about `cpu time`
  
  We will now want to repeat the increments, so that we amortise over the operations of increments. One increment per loop is indistinguishable from  the time it takes to just run on iteration of the loop. 
  
- >We will see the content in the second Lesson. 	
+ >We will see the how to test other types with various different loads [ measure X Mib with Y bytes per type ]  in the second Lesson. 	
 
