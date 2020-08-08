@@ -58,7 +58,7 @@ Let us create a file called `see_false_sharing.cpp` and populate it with
    Now one could compile, link, run, like -  [ Please see *Lesson 1*] 
     `clang++ see_false_sharing.cpp -std=c++17 -O3 -lbenchmark -lpthread -o false_sharing`
  
-   The point of this exercise is to to know, how much `time` can updating a global, shared, and protected variable [ take a note of the size of the variable ] can take.
+   The point of this exercise is to know how much `time` can updating a global, shared, and protected variable [ take a note of the size of the variable ] can take.
 
 Now, one could introduce a per function's local atomic variable and measure the cost of operations, by inserting into the file `see_false_sharing.cpp`
 
@@ -87,15 +87,15 @@ Now, one could introduce a per function's local atomic variable and measure the 
    
  ***Quiz***
 
-Try changing to normal, non atomic variables in both the benchmarks, and change  in just one, while keeping the other atomic. Do you see time difference in the real time, in each of the change pairs you made? 
+Try changing to normal, non atomic variables in both the benchmarks, and change  in just one, while keeping the other atomic. Do you see time differences in the real time, in each of the change pairs you made? 
 
 
  
 
 ## Having unprotected access is not same has having unprotected data 
 Let's think - 
-In what cases would be need atomic operations, for same variables across all threads? 
-In what cases we will it make sense for  threads to have an independent copy of their own variable? Think for both non atomic and atomic variables. 
+In what cases would atomic operations, for the same variables across all threads? 
+In what cases will it make sense for  threads to have an independent copy of their own variable? Think for both non atomic and atomic variables. 
 
 In the file created, append the following global array and a new macro.
 ```c
@@ -111,8 +111,8 @@ std::atomic<unsigned long> global_atomic_array[8192];
 
 ***Quiz***
 
-If we hit same parts of the array all the times, just to read, but you do via different threads, it  should be conceptually same to which of the tests already typed above?
-If we hit different parts of array at all times, just to read, but you do via the different threads, it  should be conceptually same to which of the tests already typed above?
+If we hit the same parts of the array all the time, just to read, but you do via different threads, it  should be conceptually the same to which of the tests already typed above?
+If we hit different parts of the array at all times, just to read, but you do via the different threads, it  should be conceptually the same to which of the tests already typed above?
 *What about writes,* instead of read, for each of the above questions?
 
 Paste the following in the file; then compile, link, and run the binary.
@@ -161,7 +161,7 @@ Think, if we do this experiment many number of times, what could be said about t
  - each of the threads exclusively updating a memory location, global to the program
 
 Let us add  the following into the file.
-Just try to multiply both the numbers passed into the ARG, each of the thread computes a `const` ! We could actually randomise the  area access for each threads. 
+Just try to multiply both the numbers passed into the ARG, each of the thread computes a `const` ! We could actually randomise the  area access for each thread. 
 
 ```c
 BENCHMARK(BM_Global_NotSharedAtomics) ARGS_1(1, 2);
@@ -197,7 +197,7 @@ BENCHMARK(BM_Global_NotSharedAtomics)->RangeMultiplier(2)->Range(0, 512)->Thread
 ```
 ***Quiz***
 
-What output difference is VISIBLE now? What pattern can one infer?  What happens if you read all the numbers aloud?  Can you read out aloud all the numbers as they soon as they occur on the terminal? 
+What output difference is VISIBLE now? What pattern can one infer?  What happens if you read all the numbers aloud?  Can you read out aloud all the numbers as soon as they occur on the terminal? 
 
  
 ## Summary	
@@ -213,6 +213,7 @@ We learned
 
 Please see, 
  
- for most recent version of the code examples. I avoid posting entire cmake project and lists, needing to focus on just the bare minimum tools to demonstrate false sharing.
+ for the most recent version of the code examples. I avoid posting entire cmake projects and lists, needing to focus on just the bare minimum tools to demonstrate false sharing.
 
 Thanks, We will see another Lesson on costs of simpler operations, like creating a thread, or implementing a critical section using a futex's wrapper. 
+
