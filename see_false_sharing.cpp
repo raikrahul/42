@@ -5,6 +5,7 @@
 
 
 // There is redundancy in the examples, usage of benchmak lib is not standard.
+// No cmake Lists are provided, just files.
 
 
 #include <atomic>
