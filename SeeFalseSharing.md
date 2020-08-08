@@ -1,7 +1,7 @@
 
-# Welcome to False Sharing Lesson!
+# False Sharing
 
-I hope the *google micro benchmark* has been set up has been done and the reader has some google search about the topic.
+I hope the *google micro benchmark* has been set up has been done and the reader has some search about the topic.
 Please see *Lesson 1* in the same repository to set up the tools and run some hello world applications. 
 
 
