@@ -99,6 +99,13 @@ In what cases would atomic operations, for the same variables across all threads
 In what cases will it make sense for  threads to have an independent copy of their own variable? Think for both non atomic and atomic variables. 
 
 In the file created, append the following global array and a new macro.
+
+_We will want to calculate a pattern [a geometric progression] of indices into the array of atomics, each element of which is 8 bytes wide_
+
+_*We will make the threads operate on the pattern we figured out*_, for each run of the threads, 
+
+One can change the indices, but one can risk into getting into segmentaion fault, or not see effects of loads of non _essential atomics_
+
 ```c
 
 #define  ARGS_1(N, M)  ->Threads(N)->Arg(M)->UseRealTime()
