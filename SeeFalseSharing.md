@@ -87,7 +87,8 @@ Now, one could introduce a per function's local atomic variable and measure the 
    
  ***Quiz***
 
-Try changing to normal, non atomic variables in both the benchmarks, and change  in just one, while keeping the other atomic. Do you see time differences in the real time, in each of the change pairs you made? 
+Try changing to normal, non atomic variables in both the benchmarks, and change  in just one, while keeping the other atomic. 
+Do you see time differences in the real time, in each of the change pairs you made? 
 
 
  
@@ -112,7 +113,9 @@ std::atomic<unsigned long> global_atomic_array[8192];
 ***Quiz***
 
 If we hit the same parts of the array all the time, just to read, but you do via different threads, it  should be conceptually the same to which of the tests already typed above?
+
 If we hit different parts of the array at all times, just to read, but you do via the different threads, it  should be conceptually the same to which of the tests already typed above?
+
 *What about writes,* instead of read, for each of the above questions?
 
 Paste the following in the file; then compile, link, and run the binary.
